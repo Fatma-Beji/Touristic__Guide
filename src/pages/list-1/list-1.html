@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>
+
+
+    <ion-segment class="forms-examples-segment">
+      <ion-segment-button class="bouton" value="post" style="color: white; font-weight: bold;" >
+        {{'places' | translate}}
+      </ion-segment-button>
+      <ion-segment-button  class="bouton" value="event" (click)="goToCountries()">
+        {{'cities' | translate}}
+      </ion-segment-button>
+      <ion-segment-button  class="bouton" value="card" (click)="goToCategories()">
+        {{'countries' | translate}}
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-title>
+
+<!--  <label class="logout" (click)="logout()">
+    {{'LOG_OUT' | translate }}
+    <ion-icon name="log-out"></ion-icon>
+  </label> -->
+
+    <label class="plus"  (click)="goToAddPlace()" >+</label>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="list-big-content">
+  <div class="list-big">
+    <ion-list>
+
+      <label *ngFor="let i of items ; let j" (show)="getPhotoUrl(i.name)" >
+        <div  *ngIf="i.country==m">
+        <ion-item-sliding #item>
+          <ion-item class="list-item" ion-item>
+        <ion-row no-padding class="content-row">
+          <ion-col no-padding width-33 class="item-avatar">
+           <preload-image class="avatar-image" [ratio]="{w:1, h:1}" [src]="i.img[0]"></preload-image>
+
+          </ion-col>
+          <ion-col no-padding width-45 class="">
+
+            <h3 class="item-title">{{i.name}}</h3>
+
+            <p class="item-desc" >{{i.description}}</p>
+
+            <!-- You can change the rows quantity by using rows="X", where X can be any number for example: rows="4" -->
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+          <ion-item-options side="right">
+
+            <button ion-button color="dark" (click)="OpenPlace(j)" >
+              <ion-icon name="create-outline"></ion-icon>
+              View
+            </button>
+
+            <label ion-button color="primary"(click)="goToEditPage(j)">
+              <ion-icon name="create-outline"></ion-icon>
+              Edit
+            </label>
+
+            <label ion-button color="danger" (click)="deletePlace(j)">
+              <ion-icon name="trash-outline"></ion-icon>
+              Delete
+           </label>
+
+        </ion-item-options>
+        </ion-item-sliding>
+      </div>
+      </label>
+
+    </ion-list>
+  </div>
+</ion-content>

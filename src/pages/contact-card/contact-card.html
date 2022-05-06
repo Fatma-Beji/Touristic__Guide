@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'PLACE_CARD' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact-card-content" >
+  <ion-slides class="contact-slides" pager="true" autoplay="4000" loop="false">
+    <ion-slide class="contact-slide" *ngFor="let image of [0,1,2,3]">
+      <background-image class="slide-image" [src]="m.img[image]"></background-image>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row class="contact-details-row" wrap>
+    <ion-col no-padding width-65>
+      <h2 class="contact-name">{{ m.name }}</h2>
+    </ion-col>
+    <br/><br/><br/>
+    <ion-col no-padding width-65>
+      <span >{{ m.day_from }} - {{m.day_to}}&nbsp; &nbsp; &nbsp; &nbsp;{{ m.time_from }} - {{m.time_to}} </span>
+    </ion-col>
+
+
+   <!-- <ion-col no-padding width-35 class="rating-col">
+      <div class="contact-rating">
+        <ion-item class="rating-item">
+          <rating [(ngModel)]="contact.rating" max="5" read-only="true"></rating>
+        </ion-item>
+      </div>
+    </ion-col> -->
+
+  </ion-row> <br/>
+ <!-- <div class="button-bar">
+    <!!-- <button ion-button primary (click)="call(contact.phone)"> ->
+    <button ion-button primary>
+      <ion-icon name="call"></ion-icon>
+    </button>
+    <button ion-button primary (click)="sendMail(contact.email)">
+      <ion-icon name="mail"></ion-icon>
+    </button>
+    <button ion-button primary (click)="openInAppBrowser(contact.website)">
+      <ion-icon name="globe"></ion-icon>
+    </button>
+  </div> -->
+
+
+<!--  <preload-image [ratio]="{w:4, h:3}" src="https://maps.googleapis.com/maps/api/staticmap?center=40.785091,-73.968285&zoom=15&size=400x300&scale=2&markers=icon:https://s3-us-west-2.amazonaws.com/ionicthemes-apps-assets/ion2FullApp/pin.min.png|40.785091,-73.968285" alt="{{ contact.name }} location map" title="{{ contact.name }} - {{ contact.address }}"></preload-image>
+  --> <ion-list class="details-list">
+    <ion-item class="detail-item">
+      <ion-avatar item-left>
+        <ion-icon name="pin"></ion-icon>
+      </ion-avatar>
+      <span class="detail-text">{{ m.adr }}</span>
+    </ion-item>
+
+    <ion-item class="detail-item">
+      <ion-avatar item-left>
+        <ion-icon name="call"></ion-icon>
+      </ion-avatar>
+      <span class="detail-text">{{ m.tel }}</span>
+    </ion-item>
+
+    <ion-item class="detail-item">
+      <ion-avatar item-left>
+        <ion-icon name="globe"></ion-icon>
+      </ion-avatar>
+      <a href="{{ m.website }}" class="detail-text">{{ m.website }}</a>
+    </ion-item>
+
+    <ion-item class="detail-item">
+      <ion-avatar item-left>
+        <ion-icon name="mail"></ion-icon>
+      </ion-avatar>
+      <span class="detail-text">{{ m.email }}</span>
+    </ion-item>
+
+  </ion-list><br/>
+  <label ion-button block class="map" (click)="openMap(m)">Get Directions</label> <br/>
+
+  <ion-list class="details-list">
+  <ion-item class="detail-item">
+    <ion-avatar item-left>
+
+    </ion-avatar>
+    <span class="detail-text">{{m.description}}</span>
+  </ion-item>
+</ion-list>
+
+
+
+<ion-scroll scrollX="true" class="horizontal-categories">
+  <ion-row class="categories-row" >
+    <ion-col width-30   *ngFor="let item of m1" (click)="goToPlace(item)">
+
+      <preload-image [ratio]="{w:1, h:1}" [src]="item.img[0]" title="">
+      </preload-image>
+      <span style="text-align: center;color: #393e46;">&nbsp;&nbsp;{{item.name}}</span>
+
+    </ion-col>
+  </ion-row>
+</ion-scroll>
+
+
+</ion-content>

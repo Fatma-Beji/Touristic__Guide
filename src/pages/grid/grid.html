@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar><br/>
+
+
+    <ion-title >{{'COUNTRIES' | translate}}</ion-title>
+
+  <!--  <ion-segment class="forms-examples-segment">
+      <ion-segment-button class="bouton" value="post" (click)="goToCountries()">
+        {{'Countries' | translate}}
+      </ion-segment-button>
+      <ion-segment-button  class="bouton" value="event" (click)="goToCategories()">
+        {{'Categories' | translate}}
+      </ion-segment-button>
+      <ion-segment-button  class="bouton" value="card" (click)="goToPlaces()">
+        {{'Places' | translate}}
+      </ion-segment-button>
+    </ion-segment> -->
+
+
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="plus"  (click)="goToAddPlace()" >+</label>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <br/>
+
+  <form >
+    <ion-list class="radio-group" radio-group >
+      <ion-item class="radio-item"  *ngFor="let item of items">
+        <ion-label >{{item.name}}</ion-label>
+        <ion-radio item-right value="{{item.name}}" (click)="go()" ></ion-radio>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+  <ion-footer>
+
+   <!-- <button class="alt-button logout-button" ion-button full icon-start (click)="go()">
+
+      {{'Submit' | translate }}
+    </button> -->
+  </ion-footer>
+
+  <!--
+  <ion-item-group>
+    <ion-item-divider>{{'GRID_EXAMPLE' | translate}} #1</ion-item-divider>
+    <ion-row class="grid-1 grid-example">
+      <ion-col width-100 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h2 class="item-title">1</h2>
+            <h2 class="item-title">1</h2>
+            <h2 class="item-title">1</h2>
+            <h2 class="item-title">1</h2>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col width-50 class="grid-item" *ngFor="let item of [2, 3, 4, 5, 6]">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner">
+            <h2 class="item-title">{{ item }}</h2>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-item-divider>{{'GRID_EXAMPLE' | translate}} #2</ion-item-divider>
+    <ion-row class="grid-2 grid-example">
+      <ion-col width-66 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h2 class="item-title">1</h2>
+            <h2 class="item-title">1</h2>
+            <h2 class="item-title">1</h2>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col width-33 class="grid-item">
+        <ion-row class="double-item">
+          <ion-col width-100 class="grid-item" *ngFor="let item of [2, 3]">
+            <div class="grid-item-wrapper">
+              <div class="grid-item-inner">
+                <h2 class="item-title">{{ item }}</h2>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col width-33 class="grid-item" *ngFor="let item of [4, 5, 6, 7]">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner">
+            <h2 class="item-title">{{ item }}</h2>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-item-divider>{{'GRID_EXAMPLE' | translate}} #4</ion-item-divider>
+    <ion-row class="grid-3 grid-example">
+      <ion-col width-33 class="grid-item" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7]">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner">
+            <h2 class="item-title">{{ item }}</h2>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-item-group>
+  -->
+</ion-content>

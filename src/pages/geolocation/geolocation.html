@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>geolocation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <button (click)="LocateMe()">LocateMe</button><br/>
+  <p>{{data}}</p> <br/>
+  <label>Latitude:{{latitude}}</label> <br/>
+  <label>Longitude:{{longitude}}</label> <br/><br/><br/>
+
+  <button (click)="map()">map</button><br/>
+
+  <button (click)="fiche()">Fiche</button>
+
+</ion-content>

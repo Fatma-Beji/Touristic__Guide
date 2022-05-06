@@ -1,0 +1,19 @@
+<ion-header class="login-header auth-header">
+  <ion-navbar>
+    <ion-title>Admin Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content auth-content">
+  <form class="login-form auth-form" [formGroup]="login" (ngSubmit)="doLogin()">
+    <ion-item>
+      <ion-input type="email" placeholder="Email"  formControlName="email"></ion-input>
+    </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Password"  formControlName="password"></ion-input>
+      </ion-item>
+
+    <button ion-button block class="auth-action-button login-button" type="submit">LOG IN</button>
+  </form>
+  </ion-content>

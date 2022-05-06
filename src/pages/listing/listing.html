@@ -1,0 +1,72 @@
+<ion-header class="listing-header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="header-logo">
+        <label>Tahwissa</label>
+        <label *ngIf="this.role==0">
+          <label style="margin-left: 160px;" (click)="Admin()">Admin  <ion-icon name="person"></ion-icon> </label>
+        </label>
+      <!--  <preload-image [ratio]="{w:583, h:100}" src="./assets/images/header_logo_white.png"></preload-image> -->
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="listing-content">
+  <background-image class="image-heading" [src]="">
+    <ion-row class="heading-row">
+      <ion-col no-padding offset-100>
+        <h2 class="main-title">Guide touristique</h2>
+      </ion-col>
+    </ion-row>
+  </background-image>
+
+  <h4 class="categories-title">{{'' | translate}}</h4>
+
+  <div #mapp style="display: none;"></div>
+
+  <ion-toolbar class="search-toolbar">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="locateMe()" class="geolocation-button" >
+        <ion-icon name="navigate"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar class="search-places-bar" placeholder="Search city" (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar> <br/>
+  <div *ngFor="let item of countryList">
+  <ion-row class="grid-categories">
+
+    <ion-col width-100  class="category-item" >
+
+    <ion-slides class="contact-slides" pager="true" autoplay="4000" loop="false">
+      <ion-slide class="contact-slide" *ngFor="let image of [0,1,2,3]">
+        <background-image  tappable class="category-heading" [src]="item.img[0]" (click)="goToPlace(item)">
+          <ion-row class="heading-row">
+            <ion-col no-padding width-100>
+              <h2 class="category-title">{{item.name}}</h2>
+            </ion-col>
+          </ion-row>
+        </background-image>
+      </ion-slide>
+    </ion-slides>
+
+    </ion-col>
+
+  </ion-row>
+</div>
+ <!-- <ion-scroll scrollX="true" class="horizontal-categories">
+    <ion-row class="categories-row">
+      <ion-col width-30 class="horizontal-item"  *ngFor="let item of countryList" (click)="goToPlace(item)">
+        <preload-image [ratio]="{w:1, h:1}" [src]="item.img" title="">
+        </preload-image>
+        <h1>{{item.name}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-scroll> -->
+
+
+</ion-content>

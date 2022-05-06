@@ -1,0 +1,104 @@
+<ion-header class="listing-header">
+  <ion-navbar>
+    <ion-row>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="header-logo">
+
+      <!--  <preload-image [ratio]="{w:583, h:100}" src="./assets/images/header_logo_white.png"></preload-image> -->
+      </div>
+    </ion-title>
+
+
+  </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="listing-content">
+  <background-image class="image-heading" [src]="">
+    <ion-row class="heading-row">
+      <ion-col no-padding offset-100>
+        <h2 class="main-title">{{m.name}}</h2>
+      </ion-col>
+    </ion-row>
+  </background-image>
+
+  <ion-toolbar class="search-toolbar">
+   <!-- <ion-buttons start>
+
+        <ion-icon name="options"></ion-icon>
+    </ion-buttons> -->
+    <ion-row>
+      <ion-col witdth-50>
+        <ion-searchbar class="search-places-bar" placeholder="Search place"  (ionInput)="getItems($event)"></ion-searchbar>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item class="category">
+          <ion-label>Category</ion-label>
+          <ion-select interface="popover" (ionChange)="getItemsFromCat($event)" >
+            <ion-option value="All">All</ion-option>
+            <ion-option>Park</ion-option>
+                <ion-option>Museum</ion-option>
+                <ion-option>Cultural Center</ion-option>
+                <ion-option>Restaurant</ion-option>
+                <ion-option>Coffe Shop</ion-option>
+                <ion-option>Hotel</ion-option>
+                <ion-option>Beach</ion-option>
+                <ion-option>Mosque</ion-option>
+                <ion-option>Arts and crafts</ion-option>
+                <ion-option>Store</ion-option>
+                <ion-option>Other</ion-option>
+            <!-- <ion-option *ngFor="let i of items1" value="{{i.category}}" >{{i.category}}</ion-option> -->
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+
+
+  </ion-row>
+
+  </ion-toolbar>
+
+
+
+  <h4 class="categories-title">{{'' | translate}}</h4>
+
+
+  <ion-row class="grid-categories">
+
+    <ion-col width-50 class="category-item" *ngFor="let item of pl">
+      <div *ngIf="item.country==m.name">
+      <background-image tappable class="category-heading" [src]="item.img[0]" (click)="goToFeed(item,pl)">
+        <ion-row class="heading-row">
+          <ion-col no-padding width-100>
+          <!--  <h2 class="category-title">{{item.name}}</h2> -->
+          </ion-col>
+        </ion-row>
+      </background-image>
+    </div>
+    <h4 style="color: #393e46;">&nbsp;&nbsp; {{item.name}} </h4>
+    <span style="color: #cccccc" > &nbsp;&nbsp;{{item.description}}</span>
+
+  <!--  <ion-card-content>
+      <p class="item-text">
+        {{item.description}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding class="actions-row">
+      <ion-col no-padding width-30 text-left>
+        <button class="action-button" ion-button clear small color="danger" icon-start>
+          <ion-icon isActive="" name='heart'></ion-icon>
+             {{'LIKES' | translate}}
+        </button>
+      </ion-col>
+    </ion-row> -->
+
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

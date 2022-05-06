@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "163500899304",
+    "firebase_url": "https://ionic4-4bddd.firebaseio.com",
+    "project_id": "ionic4-4bddd",
+    "storage_bucket": "ionic4-4bddd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163500899304:android:af74e5c72c84104abe825d",
+        "android_client_info": {
+          "package_name": "com.dlpro.tourisme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163500899304-dae4dce333gce806v3iv5349e05ej2gg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dlpro.tourisme",
+            "certificate_hash": "325e79eca0705e3d3e3abbb205dfcd26ca715016"
+          }
+        },
+        {
+          "client_id": "163500899304-i06p98jba48954qqdaerie15dtpvigf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHCqJCFSYtVgjSv9IQjE7xtNPMKxnV1f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163500899304-i06p98jba48954qqdaerie15dtpvigf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
